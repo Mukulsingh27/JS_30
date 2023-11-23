@@ -1,26 +1,22 @@
 import React from "react";
+import { decode } from "html-entities";
 
-const Card = ({ authorName, title, excerpt }) => {
-    return (
-        <div className="example-1 card">
-            <div className="wrapper">
-                <div className="date">
-                    <span className="day">12</span>
-                    <span className="month">Aug</span>
-                    <span className="year">2016</span>
-                </div>
-                <div className="data">
-                    <div className="content">
-                        <span className="author">{authorName}</span>
-                        <h1 className="title">
-                            <a href="#">{title}</a>
-                        </h1>
-                        <p className="text">{excerpt}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+const Card = ({ link, title, excerpt, image }) => {
+	return (
+		<a href={link} class="card">
+			<img src={image} class="card__image" alt="" />
+			<div class="card__overlay">
+				<div class="card__header">
+					<div class="card__header-text">
+						<h2 class="card__title">{decode(title)}</h2>
+					</div>
+				</div>
+				<p class="card__description">
+					{decode(excerpt?.replace(/(<([^>]+)>)/gi, ""))}
+				</p>
+			</div>
+		</a>
+	);
 };
 
 export default Card;
