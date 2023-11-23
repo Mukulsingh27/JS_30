@@ -3,7 +3,7 @@ import "../scss/breadcrumbs.scss";
 
 const Breadcrumbs = ({ data }) => {
 	return (
-		<nav class="breadcrumbs body-text-tiny">
+		<nav className="breadcrumbs body-text-tiny">
 			<ul>
 				{data.map((breadcrumb, index) => {
 					return (
