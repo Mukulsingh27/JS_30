@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import Blogs from "./Blogs";
 
 const App = () => {
-	const [counter, setCounter] = useState(0);
-
-	const increment = () => {
-		setCounter(counter + 1);
-	};
 	return (
-		<div>
-			Hello World!
+		<div className="main">
+			<Blogs />
 		</div>
 	);
 };
