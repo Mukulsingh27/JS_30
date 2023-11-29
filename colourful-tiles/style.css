@@ -1,0 +1,54 @@
+/*
+Colorful Tiles
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+section {
+    padding: 20px;
+}
+
+.title {
+    font-size: 36px;
+}
+
+.main-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+#tiles {
+    --auto-grid-min-size: 16rem;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(var(--auto-grid-min-size), 1fr)
+    );
+}
+
+#tiles > li {
+    border: 0.001px dotted #202020;
+    list-style-type: none;
+    padding: 5rem 1rem;
+    cursor: pointer;
+}
+
+#reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #202020;
+    border-radius: 5px;
+    background-color: #202020;
+    color: #fff;
+    cursor: pointer;
+}
